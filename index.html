@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="head">
+            <p id="title">COVID - 19</p>
+            <p id="subtitle">CASE UPDATE</p>
+          </div>
+          <div class="card">
+            <form action="">
+              <label for="">Time:</label>
+              <input type="text" id="time" required placeholder="e.g 10.20pm" />
+              <label for="">Day:</label>
+              <input type="text" id="day" required placeholder="e.g WED" />
+              <label for="">Date:</label>
+              <input
+                type="text"
+                id="date"
+                required
+                placeholder="e.g 16 APRIL, 2020"
+              />
+              <label for="">New Cases:</label>
+              <input type="text" id="newCases" required placeholder="e.g 35" />
+              <label for="">Total Confirmed:</label>
+              <input
+                type="text"
+                id="totalConfirmed"
+                required
+                placeholder="e.g 442"
+              />
+              <label for="">Discharged:</label>
+              <input
+                type="text"
+                id="discharged"
+                required
+                placeholder="e.g 152"
+              />
+              <label for="">Deaths:</label>
+              <input type="text" id="deaths" required placeholder="e.g 13" />
+              <label for="">New Discharged:</label>
+              <input
+                type="text"
+                id="newDischarged"
+                required
+                placeholder="e.g 10"
+              />
+              <label for="">New Deaths:</label>
+              <input type="text" id="newDeaths" required placeholder="e.g 1" />
+              <label for="">Locations:</label>
+              <ol id="listCase"></ol>
+              <div class="row stateHolder">
+                <div class="col-6">
+                  <label for="" style="font-size: 12px;">State:</label>
+                  <input
+                    type="text"
+                    id="location"
+                    required
+                    placeholder="e.g Lagos"
+                  />
+                </div>
+                <div class="col-4">
+                  <label for="" style="font-size: 12px;">New Cases:</label>
+                  <input type="text" id="cases" required placeholder="e.g 34" />
+                </div>
+                <div class="col-2">
+                  <a href="#!" onclick="addLocations()"
+                    ><div class="addBtn">+</div></a
+                  >
+                </div>
+              </div>
+              <button onclick="submitCase()" class="saveButton">
+                Add Case Update
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB-k6njLcEG1nqyao5k8hURvDhruQ0oLiQ",
+        authDomain: "covid-19update-a3d9c.firebaseapp.com",
+        databaseURL: "https://covid-19update-a3d9c.firebaseio.com",
+        projectId: "covid-19update-a3d9c",
+        storageBucket: "covid-19update-a3d9c.appspot.com",
+        messagingSenderId: "554057108834",
+        appId: "1:554057108834:web:f7760b0ee9c1a25845303b",
+        measurementId: "G-MDM2YNHLH0",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
